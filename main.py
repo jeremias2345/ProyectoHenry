@@ -74,6 +74,7 @@ def score_titulo( titulo:str ):
 
 @app.get("/votos_titulos/{titulo}") 
 def votos_titulo(titulo):
+   '''Ingrese un nombre de pelicula y podras ver el año de estreno y sus valoraciones '''
    dataframe = data[data["title"] == titulo]
    dataframe = dataframe.sort_values('release_year', ascending=False)
    anio = (dataframe["release_year"].iloc[0])
